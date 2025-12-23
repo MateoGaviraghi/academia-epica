@@ -15,3 +15,5 @@ export {
   SectionTitle,
   SectionDescription,
 } from "./section";
+export { PageTransition } from "./page-transition";
+export { RouteTransition } from "./route-transition";

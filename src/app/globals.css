@@ -21,6 +21,9 @@
   --animate-slide-in-right: slideInRight 0.5s ease-out;
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-gradient: gradient 8s ease infinite;
+  --animate-logo-pulse: logoPulse 1.2s ease-in-out infinite;
+  --animate-logo-fade-in: logoFadeIn 0.8s ease-out;
+  --animate-logo-fade-out: logoFadeOut 0.5s ease-in forwards;
 }
 
 @keyframes fadeIn {
@@ -61,6 +64,39 @@
   }
   50% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes logoFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
