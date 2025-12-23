@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Kursa | Infraestructura Educativa Premium",
+  title: "Academia Épica | Infraestructura Educativa Premium",
   description:
     "Desarrollamos plataformas educativas personalizadas que transforman tu conocimiento en un negocio escalable. Tu marca, tu control, tu éxito.",
   keywords: [
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     "academia online",
     "white label",
   ],
-  authors: [{ name: "Kursa" }],
+  authors: [{ name: "Academia Épica" }],
   openGraph: {
-    title: "Kursa | Infraestructura Educativa Premium",
+    title: "Academia Épica | Infraestructura Educativa Premium",
     description:
       "Desarrollamos plataformas educativas personalizadas que transforman tu conocimiento en un negocio escalable.",
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kursa | Infraestructura Educativa Premium",
+    title: "Academia Épica | Infraestructura Educativa Premium",
     description:
       "Desarrollamos plataformas educativas personalizadas que transforman tu conocimiento en un negocio escalable.",
   },

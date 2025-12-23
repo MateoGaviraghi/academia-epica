@@ -10,7 +10,7 @@ export default function Loading() {
       {/* Logo grande */}
       <div className="relative z-10 animate-pulse">
         <Image
-          src="/logo.png"
+          src="/cropped-Academica-Logo-Back-300x100.png"
           alt="Cargando..."
           width={400}
           height={120}

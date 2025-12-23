@@ -86,7 +86,7 @@ export function ServicesSection() {
       <Container>
         <SectionHeader>
           <Badge variant="outline" className="mb-4">
-            The Kursa Edge
+            Academia Épica
           </Badge>
           <SectionTitle>
             Tecnología que impulsa{" "}

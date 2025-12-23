@@ -21,7 +21,7 @@ export function HeroSection() {
         <div className="max-w-5xl mx-auto text-center py-32">
           {/* Brand name */}
           <p className="text-base md:text-lg font-medium tracking-[0.3em] text-neutral-400 uppercase mb-8">
-            Kursa
+            Academia Épica
           </p>
 
           {/* Main Headline */}

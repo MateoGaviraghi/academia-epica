@@ -57,8 +57,8 @@ export function Header() {
               className="flex items-center hover:opacity-80 transition-opacity"
             >
               <Image
-                src="/logo.png"
-                alt="Kursa"
+                src="/cropped-Academica-Logo-Back-300x100.png"
+                alt="Academia Épica"
                 width={160}
                 height={50}
                 className="h-12 sm:h-14 w-auto"
@@ -117,8 +117,8 @@ export function Header() {
             {/* Mobile Header */}
             <div className="flex items-center justify-between p-4 border-b border-neutral-100">
               <Image
-                src="/logo.png"
-                alt="Kursa"
+                src="/cropped-Academica-Logo-Back-300x100.png"
+                alt="Academia Épica"
                 width={120}
                 height={40}
                 className="h-10 w-auto"

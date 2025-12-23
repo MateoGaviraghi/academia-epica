@@ -46,8 +46,8 @@ export function PageTransition() {
       }}
     >
       <Image
-        src="/logo.png"
-        alt="Kursa"
+        src="/cropped-Academica-Logo-Back-300x100.png"
+        alt="Academia Épica"
         width={320}
         height={100}
         style={{ height: "7rem", width: "auto" }}

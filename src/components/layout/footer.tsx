@@ -22,9 +22,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { label: "Twitter", href: "https://twitter.com/kursa" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/kursa" },
-  { label: "GitHub", href: "https://github.com/kursa" },
+  { label: "Twitter", href: "https://twitter.com/academiaepica" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/academiaepica" },
+  { label: "GitHub", href: "https://github.com/academiaepica" },
 ];
 
 export function Footer() {
@@ -37,8 +37,8 @@ export function Footer() {
             <div className="col-span-2 md:col-span-4 lg:col-span-2 mb-8 lg:mb-0">
               <Link href="/" className="flex items-center mb-4">
                 <Image
-                  src="/logo.png"
-                  alt="Kursa"
+                  src="/cropped-Academica-Logo-Back-300x100.png"
+                  alt="Academia Épica"
                   width={100}
                   height={32}
                   className="h-8 w-auto"
@@ -52,10 +52,10 @@ export function Footer() {
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
                   <a
-                    href="mailto:hola@kursa.io"
+                    href="mailto:hola@academiaepica.com"
                     className="hover:text-foreground transition-colors"
                   >
-                    hola@kursa.io
+                    hola@academiaepica.com
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
@@ -121,7 +121,8 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Kursa. Todos los derechos reservados.
+            © {new Date().getFullYear()} Academia Épica. Todos los derechos
+            reservados.
           </p>
           <div className="flex items-center gap-6">
             {socialLinks.map((link) => (
