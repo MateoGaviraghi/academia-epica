@@ -33,8 +33,8 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-neutral-500 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-            Creamos infraestructura educativa a medida para que puedas escalar
-            tu negocio sin límites.
+            Desarrollamos tu propia plataforma educativa. Tu marca, tu control,
+            tu éxito.
           </p>
 
           {/* CTA Buttons */}
