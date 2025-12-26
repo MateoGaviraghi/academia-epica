@@ -68,9 +68,13 @@ export function Header() {
         <Container>
           <nav className="flex items-center justify-between">
             {/* Logo */}
-            <Link
-              href="/"
-              className="flex items-center hover:opacity-80 transition-opacity"
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="flex items-center hover:opacity-80 transition-opacity cursor-pointer"
             >
               <Image
                 src="/cropped-Academica-Logo-Back-300x100.png"
@@ -80,7 +84,7 @@ export function Header() {
                 className="h-12 sm:h-14 w-auto"
                 priority
               />
-            </Link>
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">
