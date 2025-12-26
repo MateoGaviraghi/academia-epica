@@ -1,19 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui";
 
 const footerLinks = {
-  producto: [
-    { label: "Home", href: "/" },
-    { label: "Servicios", href: "/servicios" },
-    { label: "Nuestros Clientes", href: "/clientes" },
-    { label: "Nosotros", href: "/nosotros" },
+  navegacion: [
+    { label: "Servicios", href: "#servicios" },
+    { label: "Proceso", href: "#proceso" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Plataformas", href: "#plataformas" },
   ],
   empresa: [
-    { label: "Agenda una Reunión", href: "/agenda" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contacto", href: "/contacto" },
+    { label: "Reseñas", href: "#resenas" },
+    { label: "Nosotros", href: "#nosotros" },
+    { label: "Agenda una Reunión", href: "#agenda" },
   ],
   legal: [
     { label: "Privacidad", href: "/privacy" },
@@ -24,12 +26,21 @@ const footerLinks = {
 const socialLinks = [
   { label: "Twitter", href: "https://twitter.com/academiaepica" },
   { label: "LinkedIn", href: "https://linkedin.com/company/academiaepica" },
-  { label: "GitHub", href: "https://github.com/academiaepica" },
+  { label: "Instagram", href: "https://instagram.com/academiaepica" },
 ];
+
+const scrollToSection = (href: string) => {
+  if (href.startsWith("#")) {
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+};
 
 export function Footer() {
   return (
-    <footer className="bg-muted/30 border-t border-border">
+    <footer className="bg-neutral-100 border-t border-border">
       <Container>
         <div className="py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
@@ -65,14 +76,20 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Product Links */}
+            {/* Navigation Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Producto</h4>
+              <h4 className="font-semibold text-foreground mb-4">Navegación</h4>
               <ul className="space-y-3">
-                {footerLinks.producto.map((link) => (
+                {footerLinks.navegacion.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}
+                      onClick={(e) => {
+                        if (link.href.startsWith("#")) {
+                          e.preventDefault();
+                          scrollToSection(link.href);
+                        }
+                      }}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}
@@ -90,6 +107,12 @@ export function Footer() {
                   <li key={link.href}>
                     <a
                       href={link.href}
+                      onClick={(e) => {
+                        if (link.href.startsWith("#")) {
+                          e.preventDefault();
+                          scrollToSection(link.href);
+                        }
+                      }}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}

@@ -40,7 +40,16 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-base px-8" asChild>
-              <a href="/agenda">
+              <a
+                href="#agenda"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.querySelector("#agenda");
+                  if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
                 Empezar ahora
                 <ArrowRight className="w-5 h-5" />
               </a>
@@ -51,7 +60,18 @@ export function HeroSection() {
               className="text-base text-neutral-500 hover:text-neutral-900"
               asChild
             >
-              <a href="/servicios">Conocer más →</a>
+              <a
+                href="#servicios"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.querySelector("#servicios");
+                  if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                Conocer más →
+              </a>
             </Button>
           </div>
 

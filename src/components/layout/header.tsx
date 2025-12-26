@@ -8,19 +8,35 @@ import { Button, Container } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/clientes", label: "Nuestros Clientes" },
-  { href: "/nosotros", label: "Nosotros" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proceso", label: "Proceso" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#plataformas", label: "Plataformas" },
+  { href: "#resenas", label: "Reseñas" },
+  { href: "#nosotros", label: "Nosotros" },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Detectar sección activa
+      const sections = navLinks.map((link) => link.href.replace("#", ""));
+      for (const section of sections.reverse()) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -67,12 +83,24 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.href);
+                    if (target) {
+                      target.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className={cn(
+                    "text-sm font-medium transition-colors",
+                    activeSection === link.href.replace("#", "")
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
                 >
                   {link.label}
                 </a>
@@ -80,15 +108,26 @@ export function Header() {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <Button asChild>
-                <a href="/agenda">Agenda una Reunión</a>
+                <a
+                  href="#agenda"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector("#agenda");
+                    if (target) {
+                      target.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
+                  Agendar Reunión
+                </a>
               </Button>
             </div>
 
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden p-2 -mr-2"
+              className="lg:hidden p-2 -mr-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -101,7 +140,7 @@ export function Header() {
       {/* Mobile Menu - Fullscreen Overlay (fuera del header) */}
       {isMobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 w-screen h-screen bg-white z-100"
+          className="lg:hidden fixed inset-0 w-screen h-screen bg-white z-100"
           style={{
             position: "fixed",
             top: 0,
@@ -139,7 +178,16 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   className="block text-2xl font-medium text-neutral-900 hover:text-neutral-500 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const target = document.querySelector(link.href);
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }, 100);
+                  }}
                 >
                   {link.label}
                 </a>
@@ -149,8 +197,20 @@ export function Header() {
             {/* Mobile CTA */}
             <div className="p-8 border-t border-neutral-100">
               <Button className="w-full" size="lg" asChild>
-                <a href="/agenda" onClick={() => setIsMobileMenuOpen(false)}>
-                  Agenda una Reunión
+                <a
+                  href="#agenda"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const target = document.querySelector("#agenda");
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }, 100);
+                  }}
+                >
+                  Agendar Reunión
                 </a>
               </Button>
             </div>

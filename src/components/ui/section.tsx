@@ -9,7 +9,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
   ({ className, variant = "default", ...props }, ref) => {
     const variants = {
       default: "bg-background",
-      muted: "bg-muted/30",
+      muted: "bg-neutral-100/80",
       gradient: "bg-gradient-to-b from-background via-muted/20 to-background",
     };
 

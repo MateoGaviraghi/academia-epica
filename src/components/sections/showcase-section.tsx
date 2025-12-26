@@ -68,14 +68,14 @@ const showcaseItems: ShowcaseItem[] = [
 
 export function ShowcaseSection() {
   return (
-    <Section id="clientes">
+    <Section id="portfolio" variant="muted">
       <Container>
         <SectionHeader>
           <Badge variant="outline" className="mb-4">
-            Nuestros Clientes
+            Portfolio
           </Badge>
           <SectionTitle>
-            Academias que <span className="gradient-text">inspiran</span>
+            Webs que hemos <span className="gradient-text">creado</span>
           </SectionTitle>
           <SectionDescription>
             Cada proyecto es único. Explorá la versatilidad de nuestro sistema
@@ -107,7 +107,7 @@ export function ShowcaseSection() {
                 <div className="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="text-center text-white">
                     <ExternalLink className="w-8 h-8 mx-auto mb-2" />
-                    <span className="text-sm font-medium">Ver Demo</span>
+                    <span className="text-sm font-medium">Ver Sitio</span>
                   </div>
                 </div>
               </div>
@@ -133,7 +133,16 @@ export function ShowcaseSection() {
 
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
-            <a href="/agenda">
+            <a
+              href="#agenda"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.querySelector("#agenda");
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Quiero mi propia academia
               <ArrowUpRight className="w-5 h-5" />
             </a>
