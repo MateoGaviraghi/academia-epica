@@ -2,8 +2,7 @@ import {
   HeroSection,
   ServicesSection,
   ActionPlanSection,
-  ShowcaseSection,
-  PlatformsSection,
+  ProjectsSection,
   ClientReviewsSection,
   StudentReviewsSection,
   SubmitReviewSection,
@@ -18,8 +17,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <ActionPlanSection />
-      <ShowcaseSection />
-      <PlatformsSection />
+      <ProjectsSection />
       <ClientReviewsSection />
       <StudentReviewsSection />
       <SubmitReviewSection />

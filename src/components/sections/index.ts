@@ -1,11 +1,10 @@
 export { HeroSection } from "./hero-section";
 export { ServicesSection } from "./services-section";
 export { ActionPlanSection } from "./action-plan-section";
-export { ShowcaseSection } from "./showcase-section";
-export { PlatformsSection } from "./platforms-section";
 export { ClientReviewsSection } from "./client-reviews-section";
 export { StudentReviewsSection } from "./student-reviews-section";
 export { SubmitReviewSection } from "./submit-review-section";
 export { AboutSection } from "./about-section";
 export { BookingSection } from "./booking-section";
 export { OffersSection } from "./offers-section";
+export { ProjectsSection } from "./projects-section";
