@@ -6,6 +6,7 @@ import {
   PlatformsSection,
   ClientReviewsSection,
   StudentReviewsSection,
+  SubmitReviewSection,
   AboutSection,
   BookingSection,
   OffersSection,
@@ -21,6 +22,7 @@ export default function Home() {
       <PlatformsSection />
       <ClientReviewsSection />
       <StudentReviewsSection />
+      <SubmitReviewSection />
       <AboutSection />
       <BookingSection />
       <OffersSection />

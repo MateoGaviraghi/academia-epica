@@ -5,6 +5,7 @@ export { ShowcaseSection } from "./showcase-section";
 export { PlatformsSection } from "./platforms-section";
 export { ClientReviewsSection } from "./client-reviews-section";
 export { StudentReviewsSection } from "./student-reviews-section";
+export { SubmitReviewSection } from "./submit-review-section";
 export { AboutSection } from "./about-section";
 export { BookingSection } from "./booking-section";
 export { OffersSection } from "./offers-section";

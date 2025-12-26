@@ -82,6 +82,25 @@ export function ClientReviewsSection() {
           </SectionDescription>
         </SectionHeader>
 
+        <div className="mb-8 flex justify-center">
+          <a
+            href="#dejar-resena"
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== "undefined") {
+                window.location.hash = "dejar-resena";
+              }
+              const target = document.querySelector("#dejar-resena");
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-md hover:bg-primary/90 transition-colors"
+          >
+            Deja tu reseña
+          </a>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-6">
           {clientReviews.map((review, index) => (
             <Card key={index} className="p-6 relative">
